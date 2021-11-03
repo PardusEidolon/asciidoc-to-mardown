@@ -7,7 +7,7 @@ I see a future where asciidoc and markdown are one!
 TIP: If you read this you gain better sight in the dark.
 
 ****
-= Dune Ipsum
+= Dune
 
 > _Anger is one thing, Violence is another_
 
@@ -30,3 +30,14 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."
 ____
+
+== Useful commands
+
+[source, powershell]
+----
+asciidoctor -b docbook testdoc.adoc <1>
+
+pandoc --from docbook --to markdown_strict testdoc.xml -o testdocmarkdown.md <2>
+----
+<1> Export .adoc file to a docbook .xml file
+<2> Convert docbook .xml file to a markdown .md file
