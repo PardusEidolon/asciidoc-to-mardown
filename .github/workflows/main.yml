@@ -8,17 +8,19 @@ on:
 
 
 jobs:
-  adoc-convert:
+  adoc-export-convert-info:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
+        run: mkdir docs/pandoc-test/output
       
-      - uses: ruby/setup-ruby@v1
+      - name: Ruby init  
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
       
-      - name: Asciidoctor Setup
+      - name: Asciidoctor init
         uses: reitzig/actions-asciidoctor@v2.0.0
         with:
           version: 2.0.10
@@ -28,3 +30,13 @@ jobs:
 
       - name: Convert to docbook
         run: asciidoctor -b docbook docs/pandoc-test/testdoc.adoc
+      
+      - name: Convert via Pandoc
+        uses: maxheld83/pandoc-action@v2
+        with: 
+          args: "-f docbook -t markdown_strict docs/pandoc-test/testdoc.xml -o docs/pandoc-test/output/testdocmarkdown.md"
+
+      - uses: actions/upload-artifact@v2
+        with:	
+          name: 'Artifacts-V2'	
+          path: docs/pandoc-test/output/testdocmarkdown.md
