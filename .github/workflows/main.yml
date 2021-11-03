@@ -14,7 +14,8 @@ jobs:
     steps:
       - name: checkout repo code
         uses: actions/checkout@v2
-        run: mkdir docs/pandoc-test/output
+        
+      - run: mkdir docs/pandoc-test/output
       
       - name: Ruby init  
         uses: ruby/setup-ruby@v1
