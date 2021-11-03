@@ -13,11 +13,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+      
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+      
       - name: Asciidoctor Setup
         uses: reitzig/actions-asciidoctor@v2.0.0
         with:
           version: 2.0.10
       
       - name: Asciidoctor version check
-      - run: asciidoctor --version
+        run: asciidoctor --version
