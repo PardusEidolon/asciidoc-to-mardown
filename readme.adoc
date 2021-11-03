@@ -1,0 +1,33 @@
+= Readme
+:author: PardusEidolon
+
+.Vision seeing paragraphs
+****
+I see a future where asciidoc and markdown are one!
+
+TIP: If you read this you gain better sight in the dark.
+
+****
+= Dune Ipsum
+
+> _Anger is one thing, Violence is another_
+
+The Halleck commands, the sandstorm studies the forever ecology. Otheym trains such over service. The water bond falls the false truthsayer, thus spoke Wellington but question. Unless Rautha permits the slave, until assassination splinter threatens. The Duke needs inside Feyd, after morality or victim sinks higher. Piter cannot die the light sacrifice. The school on Thufir submits the universe, among the Suk School changes daughter.
+
+The crysknife limits nor enemy sinks. Among Shaddam IV as native, with Feyd when the shadows. The mother deceives, the rule gushes. Mountain experiences and prana. The assassination tends, the spice admires. Revelation fears the primitive doubt, wife pays deep-sand seduction.
+
+Inward pattern is out crysknife whether Tleilax strums. The Chani rushes, the doctor misjudges the primitive Giedi Prime. Free tribe learns upon history since traitor ends. Wise Usul hears around sand and dream limits. The shrub out teacher forces the ferocity, against the Landsraad believes complexity. The allegiance contends, the miner orders the bindu terror.
+
+Jessica commands though Voice. Duncan suffers the official self-control. Through sacrifice while value, throughout ability because the disobedience. Weakness evades the family, thus spoke Thufir forgets the thinking steals. Ferocity prospers the infectious Idaho so Leto controls instinctual Esmar Tuek. The companion terrifies the deep-sand Chani, nor homeworld yet guard.
+
+[verse, Paul Atreides, Dune]
+____
+"I must not fear. Fear is the mind-killer.
+Fear is the little-death that brings total obliteration.
+
+I will face my fear.
+I will permit it to pass over me and through me.
+
+And when it has gone past, I will turn the inner eye to see its path.
+Where the fear has gone there will be nothing. Only I will remain."
+____

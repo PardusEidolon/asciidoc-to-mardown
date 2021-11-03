@@ -1,0 +1,78 @@
+= Document Title
+:author: Pardus Eidolon
+:reproducible:
+:source-highlighter: highlight.js
+:highlightjs-theme: atom-one-dark
+
+This is a basic AsciiDoc document by {author}.
+
+This document contains two paragraphs.
+It also has a header that specifies the document title.
+
+now for some gibberish;
+
+= This is a readme
+
+Veniam adipisicing tempor mollit consectetur tempor do laborum Lorem proident deserunt laboris irure ex. Dolore id elit et nostrud nulla reprehenderit incididunt tempor ad nisi minim do. Fugiat dolor sunt irure eu do duis ea cupidatat in. Deserunt fugiat deserunt dolor in commodo anim laboris dolore eu magna labore.
+
+Cillum minim sint nulla enim ex sunt sunt exercitation. Aliquip sint sunt velit sint enim id ullamco enim ullamco non officia aliquip eu magna. Tempor nulla veniam ad ad cupidatat aliqua aute anim exercitation aliquip velit ex qui elit. Mollit commodo duis nulla ea minim elit elit dolor irure id commodo. Voluptate eu ad consectetur irure esse magna minim occaecat labore sunt. Exercitation nisi est ut veniam velit cupidatat eiusmod ut ea Lorem velit. Nisi ex id excepteur irure voluptate incididunt pariatur voluptate officia.
+
+.After landing the cloaked Klingon bird of prey in Golden Gate park:
+[quote, Captain James T. Kirk, Star Trek IV: The Voyage Home]
+Everybody remember where we parked.
+
+[verse, Carl Sandburg, two lines from the poem Fog]
+The fog comes
+on little cat feet.
+
+== Random code
+[source, Bash]
+----
+#!/bin/bash
+
+# $RANDOM returns a different random integer at each invocation.
+# Nominal range: 0 - 32767 (signed 16-bit integer).
+
+MAXCOUNT=10
+count=1
+
+echo
+echo "$MAXCOUNT random numbers:"
+echo "-----------------"
+while [ "$count" -le $MAXCOUNT ] # Generate 10 ($MAXCOUNT) random integers.
+do
+  number=$RANDOM
+  echo $number
+  let "count += 1"  # Increment count.
+done
+echo "-----------------"
+----
+
+== Sidebars are cool
+
+[sidebar]
+Sidebars are used to visually separate auxiliary bits of content
+that supplement the main text.
+
+.Optional Title
+****
+Sidebars are used to visually separate auxiliary bits of content
+that supplement the main text.
+
+TIP: They can contain any type of content.
+
+.Source code block in a sidebar
+[source,js]
+----
+const { expect, expectCalledWith, heredoc } = require('../test/test-utils')
+----
+****
+
+== examples
+
+.Onomatopoeia
+====
+The book hit the floor with a *thud*.
+
+He could hear doves *cooing* in the pine trees`' branches.
+====
