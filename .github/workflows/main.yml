@@ -2,6 +2,8 @@ name: asciidoc-markdown convert
 
 on:
   push:
+    branches:
+      - master
     tags:
       - v*
     
