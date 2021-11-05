@@ -31,11 +31,12 @@ jobs:
       - name: Convert via Pandoc
         uses: maxheld83/pandoc-action@v2
         with: 
-          args: "-f docbook -t markdown_strict docs/pandoc-test/testdoc.xml -o docs/pandoc-test/output/testdocmarkdown.md"
-          
-      - run: |
+          args: "-f docbook -t markdown_strict docs/pandoc-test/testdoc.xml -o ./testdocmarkdown.md"
+
+      - name: post commit and push    
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m "adoc"
+          git commit -m "adoc convert complete."
           git push
