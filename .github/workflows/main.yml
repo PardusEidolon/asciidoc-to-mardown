@@ -2,6 +2,8 @@ name: asciidoc-markdown convert
 
 on:
   push:
+    branches:
+      - master
     tags:
       - v*
     
@@ -41,4 +43,4 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m $GITHUB_SHA
-          git push -u origin master
+          git push
