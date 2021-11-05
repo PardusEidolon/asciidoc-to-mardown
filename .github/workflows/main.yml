@@ -41,5 +41,4 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m $GITHUB_SHA
-          git tag v0.1b
           git push
