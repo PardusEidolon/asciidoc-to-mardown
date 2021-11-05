@@ -49,8 +49,3 @@ for f in *.xml; do pandoc -f docbook "$f" -t markdown_strict -s -o "${f%.xml}.md
 ----
 <1> Export .adoc file to a docbook .xml file
 <2> Convert docbook .xml file to a markdown .md file
-
-[source, shell]
-----
-
-----

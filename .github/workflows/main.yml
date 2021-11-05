@@ -41,4 +41,5 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m $GITHUB_SHA
-          git push origin master
+          git remote add origin https://github.com/PardusEidolon/asciidoc-to-markdown.git
+          git push -u origin master
