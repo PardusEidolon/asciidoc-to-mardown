@@ -11,14 +11,6 @@ jobs:
     steps:
       - name: checkout repo code
         uses: actions/checkout@v2
-        
-      - run: |
-          date > generated.txt
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "generated"
-          git push
      
       - name: Ruby init  
         uses: ruby/setup-ruby@v1
@@ -33,17 +25,17 @@ jobs:
       - name: Asciidoctor version check
         run: asciidoctor --version
 
-      # - name: Convert to docbook
-      #   run: asciidoctor -b docbook docs/pandoc-test/*.adoc -D ./test
+      - name: Convert to docbook
+        run: asciidoctor -b docbook ./docs/pandoc-test/*.adoc -D ./test
       
-      # - name: Convert via Pandoc
-      #   uses: maxheld83/pandoc-action@v2
-      #   with: 
-      #     args: "-f docbook -t markdown_strict ./test/testdoc.xml -o test/output/testmarkdown.md" # 'warn' or 'ignore' are also available, defaults to `warn` 
-
-      # - name: pull-request-action
-      #   uses: vsoch/pull-request-action@master
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     BRANCH_PREFIX: "update/"
-      #     PULL_REQUEST_BRANCH: "master"
+      - name: Convert via Pandoc
+        uses: maxheld83/pandoc-action@v2
+        with: 
+          args: "-f docbook -t markdown_strict ./test/testdoc.xml -o ./test/output/testmarkdown.md"
+          
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "adoc"
+          git push
