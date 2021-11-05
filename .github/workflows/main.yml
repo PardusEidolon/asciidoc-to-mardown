@@ -3,9 +3,6 @@ name: asciidoc-markdown convert
 on:
   push: 
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
 
 jobs:
   adoc-export-convert-info:
@@ -31,16 +28,20 @@ jobs:
         run: asciidoctor --version
 
       - name: Convert to docbook
-        run: asciidoctor -b docbook docs/pandoc-test/*.adoc
+        run: asciidoctor -b docbook docs/pandoc-test/*.adoc -D ./
       
       - name: Convert via Pandoc
         uses: maxheld83/pandoc-action@v2
         with: 
-          args: "-f docbook -t markdown_strict docs/pandoc-test/*.xml -o docs/pandoc-test/output/*.md"
+          args: "-f docbook -t markdown_strict docs/pandoc-test/testdoc.xml -o docs/pandoc-test/output/testmarkdown.md" # 'warn' or 'ignore' are also available, defaults to `warn` 
 
-      - uses: actions/upload-artifact@v2
-        with:	
-          name: 'Artifacts-V2'	
-          path: docs/pandoc-test/output/*.md
-          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn` 
-
+  auto-pull-request:
+      name: PullRequestAction
+      runs-on: ubuntu-latest
+      steps:
+        - name: pull-request-action
+          uses: vsoch/pull-request-action@master
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH_PREFIX: "update/"
+            PULL_REQUEST_BRANCH: "master"

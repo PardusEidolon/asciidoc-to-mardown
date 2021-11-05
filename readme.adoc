@@ -38,6 +38,19 @@ ____
 asciidoctor -b docbook testdoc.adoc <1>
 
 pandoc --from docbook --to markdown_strict testdoc.xml -o testdocmarkdown.md <2>
+
+gci -File -Recurse -Filter *.xml | ForEach-Object {
+  pandoc -f docbook -t markdown_strict -o ($_.fullName + '.md') $_.fullName
+}
+
+gci -r -i *.xml |foreach{$md=$_.directoryname+"\"+$_.basename+".md";pandoc -f docbook -t markdown_strict -s $_.name -o $md}
+
+for f in *.xml; do pandoc -f docbook "$f" -t markdown_strict -s -o "${f%.xml}.md"; done
 ----
 <1> Export .adoc file to a docbook .xml file
 <2> Convert docbook .xml file to a markdown .md file
+
+[source, shell]
+----
+
+----
