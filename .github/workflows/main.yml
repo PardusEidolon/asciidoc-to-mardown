@@ -1,8 +1,10 @@
 name: asciidoc-markdown convert
 
 on:
-  push: 
-    branches: [ master ]
+  push:
+    tags:
+      - v*
+    
 
 jobs:
   adoc-export-convert-info:
