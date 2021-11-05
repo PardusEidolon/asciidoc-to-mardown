@@ -31,7 +31,7 @@ jobs:
       - name: Convert via Pandoc
         uses: maxheld83/pandoc-action@v2
         with: 
-          args: "-f docbook -t markdown_strict docs/pandoc-test/testdoc.xml -o docs/pandoc-test/output/testdocmarkdown.md
+          args: "-f docbook -t markdown_strict docs/pandoc-test/testdoc.xml -o docs/pandoc-test/output/testdocmarkdown.md"
           
       - run: |
           git config user.name github-actions
