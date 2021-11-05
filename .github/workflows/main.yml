@@ -11,7 +11,8 @@ jobs:
     steps:
       - name: checkout repo code
         uses: actions/checkout@v2
-        run: |
+        
+      - run: |
           date > generated.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
